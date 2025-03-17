@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qfx_app/utils/slider.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class Homescreen extends StatelessWidget {
@@ -22,42 +23,7 @@ class Homescreen extends StatelessWidget {
           ),
         ),
         title: Container(
-          decoration: BoxDecoration(
-              color: const Color.fromARGB(255, 34, 33, 33),
-              borderRadius: BorderRadius.circular(7)),
-          width: 60.w,
-          height: 5.h,
-          child: Padding(
-            padding: EdgeInsets.all(1.w),
-            child: Row(
-              children: [
-                Icon(
-                  color: Colors.white,
-                  Icons.location_on,
-                  size: 6.w,
-                ),
-                SizedBox(
-                  width: 1.h,
-                ),
-                Text(
-                  "Kathmandu",
-                  style: TextStyle(
-                    fontWeight: FontWeight.bold,
-                    fontSize: 14,
-                    color: Colors.white,
-                  ),
-                ),
-                SizedBox(
-                  width: 1.h,
-                ),
-                Icon(
-                  color: Colors.white,
-                  Icons.arrow_drop_down_sharp,
-                  size: 6.w,
-                )
-              ],
-            ),
-          ),
+          child: DropdownMenuExample(),
         ),
         actions: [
           Padding(
