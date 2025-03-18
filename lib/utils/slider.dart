@@ -29,7 +29,7 @@ class _DropdownMenuExampleState extends State<DropdownMenuExample> {
           ),
           constraints: BoxConstraints(maxHeight: 5.h),
         ),
-        width: 70.w,
+        width: 50.h,
         menuHeight: 30.h,
         enableSearch: false,
         initialSelection: list.first,

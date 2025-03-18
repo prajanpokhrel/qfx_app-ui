@@ -18,9 +18,9 @@ class Homescreen extends StatelessWidget {
           toolbarHeight: 70, // Increases AppBar height
           leadingWidth: 100,
           leading: Padding(
-            padding: EdgeInsets.only(left: 3.h),
+            padding: EdgeInsets.only(left: 2.h),
             child: Image(
-              width: 10.w,
+              width: 9.w,
               height: 8.h,
               fit: BoxFit.contain,
               image: AssetImage("assets/images/logo.png"),
@@ -84,19 +84,25 @@ class Homescreen extends StatelessWidget {
           ],
         ),
         endDrawer: Drawer(
-          backgroundColor: Color.fromARGB(255, 36, 35, 35),
+          backgroundColor: Color.fromARGB(255, 46, 45, 45),
           child: Column(
             children: [
               Padding(
                 padding: EdgeInsets.only(left: 30.h, top: 4.h),
                 child: IconButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    icon: Icon(
-                      Icons.arrow_forward_ios,
-                      color: const Color.fromARGB(255, 128, 126, 126),
-                    )),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  icon: Icon(
+                    Icons.arrow_forward_ios,
+                    color: const Color.fromARGB(255, 161, 159, 159),
+                  ),
+                ),
+              ),
+              CircleAvatar(
+                backgroundColor: Colors.grey,
+                maxRadius: 40,
+                backgroundImage: AssetImage('assets/images/logo2.jpg'),
               )
             ],
           ),
