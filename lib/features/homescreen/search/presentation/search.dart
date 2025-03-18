@@ -1,5 +1,6 @@
 import 'package:app_bar_with_search_switch/app_bar_with_search_switch.dart';
 import 'package:flutter/material.dart';
+import 'package:qfx_app/features/homescreen/search/data/list_of_movies.dart';
 import 'package:qfx_app/utils/movies/movie.dart';
 
 class SearchScreen extends StatelessWidget {
@@ -7,21 +8,6 @@ class SearchScreen extends StatelessWidget {
 
   final String title;
   final searchText = ValueNotifier<String>('');
-
-  final List<Map<String, dynamic>> allMovies = [
-    {
-      "name": "OutLaw-dafa",
-      "category": "U",
-      "image": "assets/images/outlaw.png"
-    },
-    {"name": "Marco", "category": "A", "image": "assets/images/marco.png"},
-    {
-      "name": "Laaj Sharam",
-      "category": "PG",
-      "image": "assets/images/laaj.png"
-    },
-    {"name": "Chhaav", "category": "U", "image": "assets/images/chava.jpg"},
-  ];
 
   @override
   Widget build(BuildContext context) {
