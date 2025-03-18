@@ -38,7 +38,9 @@ class _DropdownMenuExampleState extends State<DropdownMenuExample> {
           child: Icon(color: Colors.white, size: 25, Icons.location_on),
         ),
         textStyle: TextStyle(
-          color: isSelected ? Colors.white : Colors.black,
+          fontSize: 12,
+          fontWeight: FontWeight.bold,
+          color: Colors.white,
         ),
         selectedTrailingIcon: Icon(
           size: 25,
@@ -59,19 +61,21 @@ class _DropdownMenuExampleState extends State<DropdownMenuExample> {
         dropdownMenuEntries:
             list.map<DropdownMenuEntry<String>>((String value) {
           return DropdownMenuEntry<String>(
-            value: value,
-            label: value,
-            style: ButtonStyle(
-              foregroundColor: MaterialStateProperty.resolveWith<Color>(
-                (Set<MaterialState> states) {
-                  if (states.contains(MaterialState.selected)) {
-                    return Colors.white;
-                  }
-                  return Colors.black;
-                },
-              ),
-            ),
-          );
+              value: value,
+              label: value,
+              style: ButtonStyle(
+                foregroundColor: MaterialStateProperty.resolveWith<Color>(
+                  (Set<MaterialState> states) {
+                    if (states.contains(MaterialState.selected)) {
+                      return Colors.white;
+                    }
+                    return Colors.black;
+                  },
+                ),
+                padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+                  EdgeInsets.only(left: 12.h),
+                ),
+              ));
         }).toList(),
       ),
     );

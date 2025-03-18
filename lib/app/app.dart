@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:qfx_app/features/presentation/homescreen.dart';
+import 'package:qfx_app/features/homescreen/presentation/homescreen.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class MyApp extends StatelessWidget {
@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
     return ResponsiveSizer(builder: (context, orientation, screenType) {
       return MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
+        title: 'QFX App',
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
