@@ -40,6 +40,7 @@ dependencies:
   multi_dropdown: ^3.0.1
   go_router: ^14.8.1
   app_bar_with_search_switch: ^1.8.6
+  carousel_slider: ^5.0.0
   
 
 dev_dependencies:
