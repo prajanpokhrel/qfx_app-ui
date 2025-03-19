@@ -60,27 +60,22 @@ class _CarouselState extends State<Carousel> {
             );
           }).toList(),
         ),
-        SizedBox(height: 2.h),
+        SizedBox(height: 1.h),
         // Dot Indicators
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            for (int i = 0; i < items.length; i++) // Use items.length
-              GestureDetector(
-                onTap: () {
-                  // _controller.animateToPage(i); // Navigate to the selected slide
-                },
-                child: AnimatedContainer(
-                  duration: Duration(milliseconds: 300),
-                  width: _current == i ? 12.0 : 8.0,
-                  height: 8.0,
-                  margin: EdgeInsets.symmetric(horizontal: 4.0),
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: _current == i
-                        ? const Color.fromARGB(255, 65, 63, 63)
-                        : Colors.grey,
-                  ),
+            for (int i = 0; i < items.length; i++)
+              AnimatedContainer(
+                duration: Duration(milliseconds: 300),
+                width: _current == i ? 16.0 : 8.0,
+                height: 8.0,
+                margin: EdgeInsets.symmetric(horizontal: 4.0),
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: _current == i
+                      ? const Color.fromARGB(255, 65, 63, 63)
+                      : Colors.grey,
                 ),
               ),
           ],

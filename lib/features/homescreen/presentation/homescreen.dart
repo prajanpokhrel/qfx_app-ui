@@ -13,7 +13,9 @@ class Homescreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
 
-    return Scaffold(
+    return DefaultTabController(
+      length: 2,
+      child: Scaffold(
         key: scaffoldKey, // Assign the key to access scaffold functions
         appBar: AppBar(
           backgroundColor: const Color.fromARGB(255, 63, 61, 61),
@@ -164,8 +166,60 @@ class Homescreen extends StatelessWidget {
           child: Column(
             children: [
               Carousel(),
+              TabBar(
+                unselectedLabelColor: Colors.white60,
+                // isScrollable: true,
+                indicatorColor: const Color.fromARGB(255, 75, 74, 74),
+                labelColor: const Color.fromARGB(204, 16, 180, 245),
+                tabs: [
+                  Tab(
+                    child: Text(
+                      "NOW SHOWING",
+                      style:
+                          TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  Tab(
+                    child: Text(
+                      "COMING SOON",
+                      style:
+                          TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                  Tab(
+                    child: Flexible(
+                      flex: 3,
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8),
+                          color: Color.fromARGB(204, 56, 191, 245),
+                        ),
+                        height: 4.h,
+                        width: 80.w,
+                        child: Padding(
+                          padding: const EdgeInsets.all(4.0),
+                          child: Row(mainAxisSize: MainAxisSize.min, children: [
+                            Icon(size: 12, Icons.electric_bolt_sharp),
+                            // SizedBox(
+                            //   width: 1,
+                            // ),
+                            Text(
+                              "QUICK BUY",
+                              style: TextStyle(
+                                  fontSize: 13, fontWeight: FontWeight.w800),
+                            ),
+                          ]),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+              Expanded(child: TabBarView(children: []))
             ],
           ),
-        ));
+        ),
+      ),
+    );
   }
 }

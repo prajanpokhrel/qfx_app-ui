@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-const List<String> list = <String>['Kathmandu', 'Dharan', 'Pokhara', "Ithari"];
+const List<String> list = <String>['ITHARI', 'DHARAN', 'POKHARA', "KATHMANDU"];
 
 class DropdownMenuExample extends StatefulWidget {
   const DropdownMenuExample({super.key});
