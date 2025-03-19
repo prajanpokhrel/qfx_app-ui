@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:qfx_app/features/homescreen/search/presentation/search.dart';
+import 'package:qfx_app/utils/carsoule/carsoule.dart';
 import 'package:qfx_app/utils/drawer.dart';
 import 'package:qfx_app/utils/drawer/drawer_details.dart';
 import 'package:qfx_app/utils/dropdown.dart';
@@ -154,7 +155,7 @@ class Homescreen extends StatelessWidget {
           ),
         ),
         body: Column(
-          children: [],
+          children: [Carousel()],
         ));
   }
 }
