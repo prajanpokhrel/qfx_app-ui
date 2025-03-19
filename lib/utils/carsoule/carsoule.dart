@@ -2,8 +2,6 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-// import 'package:flutter/material.dart';
-
 class Carousel extends StatefulWidget {
   const Carousel({super.key});
 
@@ -12,13 +10,23 @@ class Carousel extends StatefulWidget {
 }
 
 class _CarouselState extends State<Carousel> {
-  // int _current = 0;
-  // final CarouselController _controller = CarouselController();
+  int _current = 0;
+  final CarouselController _controller = CarouselController();
+
+  final List<String> items = [
+    "marco.png",
+    "OUT.jpg",
+    "pushpa2.png",
+    "laaj.png",
+    "chava.jpg"
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         CarouselSlider(
+          // carouselController: _controller,
           options: CarouselOptions(
             enableInfiniteScroll: true,
             autoPlay: true,
@@ -29,28 +37,53 @@ class _CarouselState extends State<Carousel> {
             reverse: false,
             viewportFraction: 1.0,
             height: 20.h,
+            onPageChanged: (index, reason) {
+              setState(() {
+                _current = index;
+              });
+            },
           ),
-          items: <String>[
-            "marco.png",
-            "OUT.jpg",
-            "pushpa2.png",
-            "laaj.png",
-            "chava.jpg"
-          ].map((i) {
+          items: items.map((i) {
             return Builder(
               builder: (BuildContext context) {
                 return Container(
-                  width: double.infinity,
+                  width: MediaQuery.of(context).size.width,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(1.0),
                     image: DecorationImage(
-                        image: AssetImage("assets/images/$i"),
-                        fit: BoxFit.fill),
+                      image: AssetImage("assets/images/$i"),
+                      fit: BoxFit.fill,
+                    ),
                   ),
                 );
               },
             );
           }).toList(),
+        ),
+        SizedBox(height: 2.h),
+        // Dot Indicators
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            for (int i = 0; i < items.length; i++) // Use items.length
+              GestureDetector(
+                onTap: () {
+                  // _controller.animateToPage(i); // Navigate to the selected slide
+                },
+                child: AnimatedContainer(
+                  duration: Duration(milliseconds: 300),
+                  width: _current == i ? 12.0 : 8.0,
+                  height: 8.0,
+                  margin: EdgeInsets.symmetric(horizontal: 4.0),
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: _current == i
+                        ? const Color.fromARGB(255, 65, 63, 63)
+                        : Colors.grey,
+                  ),
+                ),
+              ),
+          ],
         ),
         SizedBox(height: 3.h),
       ],

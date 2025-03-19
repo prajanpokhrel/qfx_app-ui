@@ -154,8 +154,18 @@ class Homescreen extends StatelessWidget {
             ),
           ),
         ),
-        body: Column(
-          children: [Carousel()],
+        body: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage("assets/images/black.jpg"),
+              fit: BoxFit.fill,
+            ),
+          ),
+          child: Column(
+            children: [
+              Carousel(),
+            ],
+          ),
         ));
   }
 }
