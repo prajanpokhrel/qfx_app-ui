@@ -9,18 +9,19 @@ class RadiusDesign extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 14,
-      width: 10,
+      height: 40,
+      width: 25,
       child: DecoratedBox(
         decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: isRight == true
-                ? const BorderRadius.only(
-                    topLeft: Radius.circular(12),
-                    bottomLeft: Radius.circular(12))
-                : const BorderRadius.only(
-                    topRight: Radius.circular(12),
-                    bottomRight: Radius.circular(12))),
+          color: const Color.fromARGB(255, 39, 39, 39),
+          borderRadius: isRight == true
+              ? const BorderRadius.only(
+                  topLeft: Radius.circular(18), bottomLeft: Radius.circular(18))
+              : const BorderRadius.only(
+                  topRight: Radius.circular(18),
+                  bottomRight: Radius.circular(18),
+                ),
+        ),
       ),
     );
   }
