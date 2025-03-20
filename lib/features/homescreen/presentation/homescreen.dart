@@ -1,14 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:qfx_app/features/homescreen/search/presentation/search.dart';
+import 'package:qfx_app/features/tabs/coming_soon.dart';
+import 'package:qfx_app/features/tabs/now_showing.dart';
 import 'package:qfx_app/utils/carsoule/carsoule.dart';
 import 'package:qfx_app/utils/drawer.dart';
 import 'package:qfx_app/utils/drawer/drawer_details.dart';
 import 'package:qfx_app/utils/dropdown.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
-class Homescreen extends StatelessWidget {
+class Homescreen extends StatefulWidget {
   const Homescreen({super.key});
 
+  @override
+  State<Homescreen> createState() => _HomescreenState();
+}
+
+class _HomescreenState extends State<Homescreen> {
   @override
   Widget build(BuildContext context) {
     final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
@@ -186,36 +193,41 @@ class Homescreen extends StatelessWidget {
                           TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
                     ),
                   ),
-                  Tab(
-                    child: Flexible(
-                      flex: 3,
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(8),
-                          color: Color.fromARGB(204, 56, 191, 245),
-                        ),
-                        height: 4.h,
-                        width: 80.w,
-                        child: Padding(
-                          padding: const EdgeInsets.all(4.0),
-                          child: Row(mainAxisSize: MainAxisSize.min, children: [
-                            Icon(size: 12, Icons.electric_bolt_sharp),
-                            // SizedBox(
-                            //   width: 1,
-                            // ),
-                            Text(
-                              "QUICK BUY",
-                              style: TextStyle(
-                                  fontSize: 13, fontWeight: FontWeight.w800),
-                            ),
-                          ]),
-                        ),
+                  Flexible(
+                    flex: 3,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                        color: Color.fromARGB(204, 56, 191, 245),
+                      ),
+                      height: 4.h,
+                      width: 80.w,
+                      child: Padding(
+                        padding: const EdgeInsets.all(4.0),
+                        child: Row(mainAxisSize: MainAxisSize.min, children: [
+                          Icon(size: 12, Icons.electric_bolt_sharp),
+                          // SizedBox(
+                          //   width: 1,
+                          // ),
+                          Text(
+                            "QUICK BUY",
+                            style: TextStyle(
+                                fontSize: 13, fontWeight: FontWeight.w800),
+                          ),
+                        ]),
                       ),
                     ),
                   ),
                 ],
               ),
-              Expanded(child: TabBarView(children: []))
+              Expanded(
+                child: TabBarView(children: [
+                  NowShowing(
+                    wholeScreen: false,
+                  ),
+                  ComingSoon(),
+                ]),
+              ),
             ],
           ),
         ),
