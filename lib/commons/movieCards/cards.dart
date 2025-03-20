@@ -43,6 +43,26 @@ class MovieCards extends StatelessWidget {
                       image: AssetImage('assets/images/pushpa2.png'),
                     ),
                   ),
+                  Container(
+                    margin: EdgeInsets.only(left: 16.h, bottom: 22.h),
+                    height: 3.h,
+                    width: 8.w,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(4),
+                      color: Color.fromARGB(255, 7, 168, 128),
+                    ),
+                    child: Column(
+                      children: [
+                        Text(
+                          "A",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 12,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ],
+                    ),
+                  ),
                   SizedBox(
                     height: 2.h,
                   ),

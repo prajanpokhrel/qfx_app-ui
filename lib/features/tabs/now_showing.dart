@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:qfx_app/commons/movieCards/cards.dart';
-import 'package:qfx_app/utils/radius.dart';
-import 'package:responsive_sizer/responsive_sizer.dart';
 
 class NowShowing extends StatelessWidget {
   final bool wholeScreen;
@@ -9,16 +7,25 @@ class NowShowing extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Row(
-          children: [
-            MovieCards(),
-            Spacer(),
-            MovieCards(),
-          ],
-        ),
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        children: [
+          Row(
+            children: [
+              MovieCards(),
+              Spacer(),
+              MovieCards(),
+            ],
+          ),
+          Row(
+            children: [
+              MovieCards(),
+              Spacer(),
+              MovieCards(),
+            ],
+          ),
+        ],
+      ),
     );
   }
 }
