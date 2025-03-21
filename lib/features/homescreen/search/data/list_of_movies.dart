@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 final List<Map<String, dynamic>> allMovies = [
   {
     //now showing
@@ -30,10 +32,27 @@ final List<Map<String, dynamic>> allMovies = [
     "image": "assets/images/pushpa2.png",
     "movieTypes": "Action, Drama"
   },
-  {
-    "name": "Pushpa ",
-    "category": "A",
-    "image": "assets/images/pushpa2.png",
-    "movieTypes": "Action, Drama"
-  },
 ];
+
+// coming soon movie list
+
+// final List<Map<String, dynamic>> ComingSoon = [
+//   {
+//     "name": "Sikandar",
+//     "category": "U",
+//     "image": "assets/images/sikandar.jpeg",
+//     "movieTypes": "Action, Drama"
+//   },
+//   {
+//     "name": "Dori",
+//     "category": "PG",
+//     "image": "assets/images/dori.png",
+//     "movieTypes": "Drama"
+//   },
+//   {
+//     "name": "Karate Legends",
+//     "category": "U",
+//     "image": "assets/images/leg,png",
+//     "movieTypes": "Action, Drama"
+//   },
+// ];

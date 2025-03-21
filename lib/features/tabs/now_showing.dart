@@ -21,6 +21,7 @@ class NowShowing extends StatelessWidget {
                 movieName: allMovies[firstIndex]['name'],
                 Category: allMovies[firstIndex]['category'],
                 images: AssetImage(allMovies[firstIndex]['image']),
+                // advacnce: true,
               ),
             ),
             if (secondIndex < allMovies.length)
@@ -29,6 +30,7 @@ class NowShowing extends StatelessWidget {
                   movieName: allMovies[secondIndex]['name'],
                   Category: allMovies[secondIndex]['category'],
                   images: AssetImage(allMovies[secondIndex]['image']),
+                  // advacnce: true,
                 ),
               )
             else

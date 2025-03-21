@@ -6,11 +6,14 @@ class MovieCards extends StatelessWidget {
   final String movieName;
   final String Category;
   final ImageProvider images;
-  const MovieCards(
-      {super.key,
-      required this.movieName,
-      required this.Category,
-      required this.images});
+  final bool isadvacnce;
+  const MovieCards({
+    super.key,
+    required this.movieName,
+    required this.Category,
+    required this.images,
+    this.isadvacnce = false,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +23,7 @@ class MovieCards extends StatelessWidget {
         left: 1.h,
       ),
       child: SizedBox(
-        height: 32.5.h,
+        height: isadvacnce == true ? 32.5.h : 30.5.h,
         width: 47.w,
         child: DecoratedBox(
           decoration: BoxDecoration(
@@ -30,19 +33,27 @@ class MovieCards extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Center(
-                child: Text(
-                  "Advance",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
+              if (isadvacnce)
+                Center(
+                  child: Text(
+                    "advance",
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
-              ),
               Stack(
                 alignment: Alignment.center,
                 children: [
                   ClipRRect(
+                    borderRadius: BorderRadius.only(
+                        topLeft: isadvacnce == true
+                            ? Radius.circular(0)
+                            : Radius.circular(8),
+                        topRight: isadvacnce == true
+                            ? Radius.circular(0)
+                            : Radius.circular(8)),
                     child: Image(
                       fit: BoxFit.cover,
                       width: 48.w,
@@ -84,7 +95,7 @@ class MovieCards extends StatelessWidget {
                 ],
               ),
               Container(
-                height: 5.h,
+                height: isadvacnce == true ? 5.h : 5.5.h,
                 width: 48.w,
                 decoration: BoxDecoration(
                   color: Color.fromARGB(255, 63, 61, 61),
