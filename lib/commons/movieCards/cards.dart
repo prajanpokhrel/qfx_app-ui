@@ -3,7 +3,14 @@ import 'package:qfx_app/utils/radius.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class MovieCards extends StatelessWidget {
-  const MovieCards({super.key});
+  final String movieName;
+  final String Category;
+  final ImageProvider images;
+  const MovieCards(
+      {super.key,
+      required this.movieName,
+      required this.Category,
+      required this.images});
 
   @override
   Widget build(BuildContext context) {
@@ -40,7 +47,7 @@ class MovieCards extends StatelessWidget {
                       fit: BoxFit.cover,
                       width: 47.w,
                       height: 25.h,
-                      image: AssetImage('assets/images/pushpa2.png'),
+                      image: images,
                     ),
                   ),
                   Container(
@@ -54,7 +61,7 @@ class MovieCards extends StatelessWidget {
                     child: Column(
                       children: [
                         Text(
-                          "A",
+                          Category,
                           style: TextStyle(
                               color: Colors.white,
                               fontSize: 12,
@@ -89,7 +96,7 @@ class MovieCards extends StatelessWidget {
                 child: Column(
                   children: [
                     Text(
-                      "Pushpa2",
+                      movieName,
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 12,

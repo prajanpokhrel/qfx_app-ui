@@ -10,16 +10,16 @@ class RadiusDesign extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 40,
-      width: 25,
+      width: 30,
       child: DecoratedBox(
         decoration: BoxDecoration(
           color: const Color.fromARGB(255, 39, 39, 39),
           borderRadius: isRight == true
               ? const BorderRadius.only(
-                  topLeft: Radius.circular(18), bottomLeft: Radius.circular(18))
+                  topLeft: Radius.circular(20), bottomLeft: Radius.circular(20))
               : const BorderRadius.only(
-                  topRight: Radius.circular(18),
-                  bottomRight: Radius.circular(18),
+                  topRight: Radius.circular(20),
+                  bottomRight: Radius.circular(20),
                 ),
         ),
       ),

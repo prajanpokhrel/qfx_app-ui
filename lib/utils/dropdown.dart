@@ -64,15 +64,15 @@ class _DropdownMenuExampleState extends State<DropdownMenuExample> {
               value: value,
               label: value,
               style: ButtonStyle(
-                foregroundColor: MaterialStateProperty.resolveWith<Color>(
-                  (Set<MaterialState> states) {
-                    if (states.contains(MaterialState.selected)) {
+                foregroundColor: WidgetStateProperty.resolveWith<Color>(
+                  (Set<WidgetState> states) {
+                    if (states.contains(WidgetState.selected)) {
                       return Colors.white;
                     }
                     return Colors.black;
                   },
                 ),
-                padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+                padding: WidgetStateProperty.all<EdgeInsetsGeometry>(
                   EdgeInsets.only(left: 12.h),
                 ),
               ));
