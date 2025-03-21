@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:qfx_app/features/homescreen/presentation/homescreen.dart';
+
+import 'package:qfx_app/utils/widgets/bottombar/bottombar.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class MyApp extends StatelessWidget {
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
-        home: Homescreen(),
+        home: BottomBar(),
       );
     });
   }
