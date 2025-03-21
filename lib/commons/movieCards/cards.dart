@@ -6,6 +6,7 @@ class MovieCards extends StatelessWidget {
   final String movieName;
   final String Category;
   final ImageProvider images;
+  final String moviesTypes;
   final bool isadvacnce;
   const MovieCards({
     super.key,
@@ -13,6 +14,7 @@ class MovieCards extends StatelessWidget {
     required this.Category,
     required this.images,
     this.isadvacnce = false,
+    required this.moviesTypes,
   });
 
   @override
@@ -114,7 +116,7 @@ class MovieCards extends StatelessWidget {
                           fontWeight: FontWeight.bold),
                     ),
                     Text(
-                      "| Action, Drama",
+                      moviesTypes,
                       style: TextStyle(
                           color: Colors.white,
                           fontSize: 12,

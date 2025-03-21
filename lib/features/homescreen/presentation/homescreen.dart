@@ -224,9 +224,6 @@ class _HomescreenState extends State<Homescreen> {
                   NowShowing(
                     wholeScreen: false,
                   ),
-                  NowShowing(
-                    wholeScreen: false,
-                  ),
                   ComingSoon(),
                 ]),
               ),
