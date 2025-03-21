@@ -6,6 +6,7 @@ import 'package:qfx_app/utils/widgets/bottombar/bottombar.dart';
 import 'package:qfx_app/utils/widgets/carsoule/carsoule.dart';
 import 'package:qfx_app/utils/widgets/drawer/drawer_details.dart';
 import 'package:qfx_app/utils/dropdown.dart';
+import 'package:qfx_app/utils/widgets/popupcard.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class Homescreen extends StatefulWidget {
@@ -196,7 +197,17 @@ class _HomescreenState extends State<Homescreen> {
                   Flexible(
                     flex: 3,
                     child: GestureDetector(
-                      onTap: () {},
+                      onTap: () {
+                        showDialog(
+                            context: context,
+                            builder: (context) {
+                              return Dialog(
+                                backgroundColor: Colors.transparent,
+                                elevation: 0,
+                                child: Popupcard(),
+                              );
+                            });
+                      },
                       child: Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(8),
