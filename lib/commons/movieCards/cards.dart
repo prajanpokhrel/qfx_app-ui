@@ -45,7 +45,7 @@ class MovieCards extends StatelessWidget {
                   ClipRRect(
                     child: Image(
                       fit: BoxFit.cover,
-                      width: 47.w,
+                      width: 48.w,
                       height: 25.h,
                       image: images,
                     ),
@@ -85,7 +85,7 @@ class MovieCards extends StatelessWidget {
               ),
               Container(
                 height: 5.h,
-                width: 47.w,
+                width: 48.w,
                 decoration: BoxDecoration(
                   color: Color.fromARGB(255, 63, 61, 61),
                   borderRadius: BorderRadius.only(

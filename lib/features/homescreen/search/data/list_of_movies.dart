@@ -30,4 +30,10 @@ final List<Map<String, dynamic>> allMovies = [
     "image": "assets/images/pushpa2.png",
     "movieTypes": "Action, Drama"
   },
+  {
+    "name": "Pushpa ",
+    "category": "A",
+    "image": "assets/images/pushpa2.png",
+    "movieTypes": "Action, Drama"
+  },
 ];

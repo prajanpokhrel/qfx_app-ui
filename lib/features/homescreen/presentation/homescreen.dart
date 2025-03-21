@@ -3,7 +3,6 @@ import 'package:qfx_app/features/homescreen/search/presentation/search.dart';
 import 'package:qfx_app/features/tabs/coming_soon.dart';
 import 'package:qfx_app/features/tabs/now_showing.dart';
 import 'package:qfx_app/utils/carsoule/carsoule.dart';
-import 'package:qfx_app/utils/drawer.dart';
 import 'package:qfx_app/utils/drawer/drawer_details.dart';
 import 'package:qfx_app/utils/dropdown.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';

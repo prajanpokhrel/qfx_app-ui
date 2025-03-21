@@ -8,50 +8,34 @@ class NowShowing extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Column(
-        children: [
-          Row(
-            children: [
-              MovieCards(
-                movieName: allMovies[0]['name'],
-                Category: allMovies[0]['category'],
-                images: AssetImage(allMovies[0]['image']),
+    return ListView.builder(
+      itemCount: (allMovies.length / 2).ceil(),
+      itemBuilder: (context, index) {
+        int firstIndex = index * 2;
+        int secondIndex = firstIndex + 1;
+
+        return Row(
+          children: [
+            Expanded(
+              child: MovieCards(
+                movieName: allMovies[firstIndex]['name'],
+                Category: allMovies[firstIndex]['category'],
+                images: AssetImage(allMovies[firstIndex]['image']),
               ),
-              Spacer(),
-              MovieCards(
-                movieName: allMovies[1]['name'],
-                Category: allMovies[1]['category'],
-                images: AssetImage(allMovies[1]['image']),
-              ),
-            ],
-          ),
-          Row(
-            children: [
-              MovieCards(
-                movieName: allMovies[2]['name'],
-                Category: allMovies[2]['category'],
-                images: AssetImage(allMovies[2]['image']),
-              ),
-              Spacer(),
-              MovieCards(
-                movieName: allMovies[3]['name'],
-                Category: allMovies[3]['category'],
-                images: AssetImage(allMovies[3]['image']),
-              ),
-            ],
-          ),
-          Row(
-            children: [
-              MovieCards(
-                movieName: allMovies[4]['name'],
-                Category: allMovies[4]['category'],
-                images: AssetImage(allMovies[4]['image']),
-              ),
-            ],
-          ),
-        ],
-      ),
+            ),
+            if (secondIndex < allMovies.length)
+              Expanded(
+                child: MovieCards(
+                  movieName: allMovies[secondIndex]['name'],
+                  Category: allMovies[secondIndex]['category'],
+                  images: AssetImage(allMovies[secondIndex]['image']),
+                ),
+              )
+            else
+              Expanded(child: SizedBox()),
+          ],
+        );
+      },
     );
   }
 }
