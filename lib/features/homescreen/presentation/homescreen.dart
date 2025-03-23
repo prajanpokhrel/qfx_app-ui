@@ -5,7 +5,7 @@ import 'package:qfx_app/features/tabs/now_showing.dart';
 import 'package:qfx_app/utils/widgets/bottombar/bottombar.dart';
 import 'package:qfx_app/utils/widgets/carsoule/carsoule.dart';
 import 'package:qfx_app/utils/widgets/drawer/drawer_details.dart';
-import 'package:qfx_app/utils/dropdown.dart';
+import 'package:qfx_app/utils/widgets/dropdown/dropdown.dart';
 import 'package:qfx_app/utils/widgets/popupcard.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 

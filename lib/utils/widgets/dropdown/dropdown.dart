@@ -12,7 +12,7 @@ class DropdownMenuExample extends StatefulWidget {
 
 class _DropdownMenuExampleState extends State<DropdownMenuExample> {
   String dropdownValue = list.first;
-  bool isSelected = false; // Track if an item is selected
+  bool isSelected = true; // Track if an item is selected
 
   @override
   Widget build(BuildContext context) {
