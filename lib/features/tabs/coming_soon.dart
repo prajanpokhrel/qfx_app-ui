@@ -17,7 +17,7 @@ class ComingSoon extends StatelessWidget {
           children: [
             Expanded(
               child: MovieCards(
-                isadvacnce: true,
+                isadvacnce: false,
                 movieName: UpcomingMovies[firstIndex]['name'],
                 Category: UpcomingMovies[firstIndex]['category'],
                 images: AssetImage(UpcomingMovies[firstIndex]['image']),
@@ -28,11 +28,11 @@ class ComingSoon extends StatelessWidget {
             if (secondIndex < UpcomingMovies.length)
               Expanded(
                 child: MovieCards(
+                  isadvacnce: true,
                   movieName: UpcomingMovies[secondIndex]['name'],
                   Category: UpcomingMovies[secondIndex]['category'],
                   images: AssetImage(UpcomingMovies[secondIndex]['image']),
                   moviesTypes: UpcomingMovies[firstIndex]['movieTypes'],
-                  // advacnce: true,
                 ),
               )
             else

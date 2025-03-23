@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:qfx_app/utils/applayout.dart';
 import 'package:qfx_app/utils/radius.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
@@ -25,12 +26,14 @@ class MovieCards extends StatelessWidget {
         left: 1.h,
       ),
       child: SizedBox(
-        height: isadvacnce == true ? 32.5.h : 30.5.h,
+        height: isadvacnce == true ? 32.5.h : 30.9.h,
         width: 47.w,
         child: DecoratedBox(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(18),
-            color: Color.fromARGB(204, 56, 191, 245),
+            color: isadvacnce == true
+                ? Color.fromARGB(204, 56, 191, 245)
+                : Color.fromARGB(204, 105, 103, 103),
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -96,8 +99,13 @@ class MovieCards extends StatelessWidget {
                   ),
                 ],
               ),
+              Expanded(
+                child: AppLayoutBuilder(
+                  randomDivider: 6,
+                ),
+              ),
               Container(
-                height: isadvacnce == true ? 5.h : 5.5.h,
+                height: isadvacnce == true ? 5.h : 5.7.h,
                 width: 48.w,
                 decoration: BoxDecoration(
                   color: Color.fromARGB(255, 63, 61, 61),

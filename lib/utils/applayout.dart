@@ -17,7 +17,8 @@ class AppLayoutBuilder extends StatelessWidget {
                   width: 3,
                   height: 1,
                   child: DecoratedBox(
-                      decoration: BoxDecoration(color: Colors.white)),
+                      decoration: BoxDecoration(
+                          color: Color.fromARGB(255, 141, 138, 138))),
                 )),
       );
     });
