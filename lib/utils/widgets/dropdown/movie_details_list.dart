@@ -11,7 +11,7 @@ List<String> MovieList = [
 
 // list of movie hall
 List<String> MovieHall = [
-  'Select Cinema',
+  "Select Cinema",
   "Apex Mall",
   "Bageshori",
   "Labim mall",
@@ -25,7 +25,7 @@ List<String> Date = [
   "2025-04-1",
 ];
 //time avaliable
-List<String> time = [
+List<String> Time = [
   "Select Time",
   "15:00 AUDI 2",
   "21:00 AUDI 1",

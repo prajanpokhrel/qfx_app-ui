@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:qfx_app/utils/widgets/dropdown/drop_down_widgets.dart';
+import 'package:qfx_app/utils/widgets/dropdown/movie_details_list.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
 class Popupcard extends StatefulWidget {
@@ -10,7 +11,11 @@ class Popupcard extends StatefulWidget {
 }
 
 class _PopupcardState extends State<Popupcard> {
+  //select value for each dropdowns
   String selectedMovie = "Select Movie";
+  String selectedCinema = "Select Cinema";
+  String selectedDate = "Select Date";
+  String selectedTime = "Select Time";
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -111,26 +116,45 @@ class _PopupcardState extends State<Popupcard> {
                         selectedMovie = movie;
                       });
                     },
+                    items: MovieList,
+                    initialValue: selectedMovie,
                   ),
-
-                  // SizedBox(
-                  //   height: 2.h,
-                  // ),
-                  // DropDownWidgets(
-                  //   movieSelected: (String) {},
-                  // ),
-                  // SizedBox(
-                  //   height: 2.h,
-                  // ),
-                  // DropDownWidgets(
-                  //   movieSelected: (String) {},
-                  // ),
-                  // SizedBox(
-                  //   height: 2.h,
-                  // ),
-                  // DropDownWidgets(
-                  //   movieSelected: (String) {},
-                  // ),
+                  SizedBox(
+                    height: 2.h,
+                  ),
+                  DropDownWidgets(
+                    movieSelected: (String cinema) {
+                      setState(() {
+                        selectedCinema = cinema;
+                      });
+                    },
+                    items: MovieHall,
+                    initialValue: selectedCinema,
+                  ),
+                  SizedBox(
+                    height: 2.h,
+                  ),
+                  DropDownWidgets(
+                    movieSelected: (String date) {
+                      setState(() {
+                        selectedDate = date;
+                      });
+                    },
+                    items: Date,
+                    initialValue: selectedDate,
+                  ),
+                  SizedBox(
+                    height: 2.h,
+                  ),
+                  DropDownWidgets(
+                    movieSelected: (String time) {
+                      setState(() {
+                        selectedTime = time;
+                      });
+                    },
+                    items: Time,
+                    initialValue: selectedTime,
+                  ),
                 ],
               ),
             ),

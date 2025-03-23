@@ -4,15 +4,27 @@ import 'package:responsive_sizer/responsive_sizer.dart';
 
 class DropDownWidgets extends StatefulWidget {
   final Function(String) movieSelected;
+  final List<String> items;
+  final String initialValue;
 
-  const DropDownWidgets({super.key, required this.movieSelected});
+  const DropDownWidgets(
+      {super.key,
+      required this.movieSelected,
+      required this.items,
+      required this.initialValue});
 
   @override
   State<DropDownWidgets> createState() => _DropDownWidgetsState();
 }
 
 class _DropDownWidgetsState extends State<DropDownWidgets> {
-  String dropdownValue = "Select Movie";
+  late String dropdownValue;
+
+  @override
+  void initState() {
+    super.initState();
+    dropdownValue = widget.initialValue;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +57,7 @@ class _DropDownWidgetsState extends State<DropDownWidgets> {
             widget.movieSelected(newValue);
           }
         },
-        items: MovieList.map<DropdownMenuItem<String>>((String value) {
+        items: widget.items.map<DropdownMenuItem<String>>((String value) {
           return DropdownMenuItem<String>(
             value: value,
             child: Text(
