@@ -176,16 +176,27 @@ class _PopupcardState extends State<Popupcard> {
                     height: 7.h,
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: selectedMovie == "Select Movie "
-                            ? Colors.white
-                            : Colors.blue,
+                        backgroundColor:
+                            (selectedMovie.trim() != "Select Movie" &&
+                                    selectedCinema.trim() != "Select Cinema" &&
+                                    selectedDate.trim() != "Select Date" &&
+                                    selectedTime.trim() != "Select Time")
+                                ? Colors.blue
+                                : Colors.grey,
                         foregroundColor: Colors.white,
                         padding: EdgeInsets.zero,
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(8),
                         ),
                       ),
-                      onPressed: selectedMovie == "Select Movie" ? null : () {},
+                      onPressed: (selectedMovie.trim() != "Select Movie" &&
+                              selectedCinema.trim() != "Select Cinema" &&
+                              selectedDate.trim() != "Select Date" &&
+                              selectedTime.trim() != "Select Time")
+                          ? () {
+                              print("Booking is in progress......");
+                            }
+                          : null,
                       child: Row(
                         children: [
                           Padding(

@@ -15,6 +15,7 @@ class MyApp extends StatelessWidget {
         title: 'QFX App',
         theme: ThemeData(
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          primarySwatch: Colors.blue,
           useMaterial3: true,
         ),
         home: BottomBar(),
