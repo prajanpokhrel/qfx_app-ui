@@ -1,10 +1,12 @@
 import 'package:fluentui_icons/fluentui_icons.dart';
 
 import 'package:flutter/material.dart';
+import 'package:qfx_app/commons/movieCards/dialog_box.dart';
 import 'package:qfx_app/features/homescreen/presentation/homescreen.dart';
 import 'package:qfx_app/features/myloyalty/presentation/myloyalty.dart';
 import 'package:qfx_app/features/offers/presentation/offer.dart';
 import 'package:qfx_app/features/profile/presentations/profile.dart';
+import 'package:qfx_app/utils/widgets/popupcard.dart';
 
 class BottomBar extends StatefulWidget {
   const BottomBar({super.key});
@@ -43,7 +45,7 @@ class _BottomBarState extends State<BottomBar> {
           unselectedItemColor: const Color.fromARGB(255, 177, 174, 174),
           selectedItemColor: Colors.white,
           showSelectedLabels: true,
-          items: const [
+          items: [
             BottomNavigationBarItem(
                 activeIcon: Icon(Icons.home_sharp),
                 icon: Icon(
@@ -60,11 +62,31 @@ class _BottomBarState extends State<BottomBar> {
                 label: "OFFERS"),
             BottomNavigationBarItem(
                 activeIcon: Icon(Icons.loyalty),
-                icon: Icon(
-                  Icons.loyalty,
-                  size: 28,
+                icon: SizedBox(
+                  height: 30,
+                  width: 30,
+                  child: IconButton(
+                    onPressed: () {
+                      showDialog(
+                          context: context,
+                          builder: (context) {
+                            return Dialog(
+                              backgroundColor: Colors.transparent,
+                              elevation: 0,
+                              child: DialogBox(),
+                            );
+                          });
+                    },
+                    icon: Icon(Icons.loyalty),
+                  ),
                 ),
-                label: "MY LOYALTY"),
+                label: "MY LOYALTY"
+
+                // icon: Icon(
+                //   Icons.loyalty,
+                //   size: 28,
+                // ),
+                ),
             BottomNavigationBarItem(
                 activeIcon: Icon(Icons.person),
                 icon: Icon(

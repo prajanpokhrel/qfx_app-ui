@@ -38,10 +38,11 @@ class _PopupcardState extends State<Popupcard> {
                   height: 4.h,
                   width: 10.w,
                   decoration: BoxDecoration(
-                      color: const Color.fromARGB(255, 86, 173, 245),
-                      borderRadius: BorderRadius.circular(
-                        4,
-                      )),
+                    color: const Color.fromARGB(255, 86, 173, 245),
+                    borderRadius: BorderRadius.circular(
+                      4,
+                    ),
+                  ),
                   child: Icon(
                     size: 20,
                     Icons.electric_bolt_sharp,
@@ -69,7 +70,7 @@ class _PopupcardState extends State<Popupcard> {
                     Icons.close,
                     color: Colors.white,
                   ),
-                )
+                ),
               ],
             ),
           ),

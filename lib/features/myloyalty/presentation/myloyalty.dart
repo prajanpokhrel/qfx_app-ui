@@ -5,8 +5,11 @@ class MyloyaltyScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      body: Text("loyalty"),
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: const Color.fromARGB(255, 63, 61, 61),
+        toolbarHeight: 70,
+      ),
     );
   }
 }
