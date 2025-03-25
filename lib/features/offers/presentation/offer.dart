@@ -15,6 +15,7 @@ class _OffersScreenState extends State<OffersScreen> {
   Widget build(BuildContext context) {
     final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
     return Scaffold(
+      key: scaffoldKey,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(80),
         child: AppBar(
@@ -46,7 +47,9 @@ class _OffersScreenState extends State<OffersScreen> {
                     ),
                     Spacer(),
                     IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          scaffoldKey.currentState?.openEndDrawer();
+                        },
                         icon: Icon(
                           Icons.menu,
                           color: Colors.white,
@@ -56,6 +59,7 @@ class _OffersScreenState extends State<OffersScreen> {
           ),
         ),
       ),
+      endDrawer: DrawerWidgets(),
       body: Column(
         children: [],
       ),
