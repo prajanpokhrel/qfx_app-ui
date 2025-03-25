@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:qfx_app/utils/widgets/drawer/drawer.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
 
@@ -11,6 +12,16 @@ class OffersScreen extends StatefulWidget {
 
 class _OffersScreenState extends State<OffersScreen> {
   final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey<ScaffoldState>();
+  @override
+  void initState() {
+    super.initState();
+
+    SystemChrome.setSystemUIOverlayStyle(
+      const SystemUiOverlayStyle(
+        statusBarColor: Colors.black,
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +35,7 @@ class _OffersScreenState extends State<OffersScreen> {
             child: Column(
               children: [
                 Padding(
-                  padding: EdgeInsets.only(right: 20.h),
+                  padding: EdgeInsets.only(right: 20.h, top: 1.h),
                   child: Image.asset(
                     "assets/images/logo.png",
                     width: 14.w,
