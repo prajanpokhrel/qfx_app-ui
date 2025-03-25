@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:qfx_app/features/homescreen/search/presentation/search.dart';
+import 'package:qfx_app/features/myloyalty/presentation/myloyalty.dart';
+import 'package:qfx_app/features/offers/presentation/offer.dart';
+import 'package:qfx_app/features/profile/presentations/profile.dart';
 import 'package:qfx_app/features/tabs/coming_soon.dart';
 import 'package:qfx_app/features/tabs/now_showing.dart';
 import 'package:qfx_app/utils/widgets/bottombar/bottombar.dart';
 import 'package:qfx_app/utils/widgets/carsoule/carsoule.dart';
+import 'package:qfx_app/utils/widgets/drawer/drawer.dart';
 import 'package:qfx_app/utils/widgets/drawer/drawer_details.dart';
 import 'package:qfx_app/utils/widgets/dropdown/dropdown.dart';
 import 'package:qfx_app/utils/widgets/popupcard.dart';
@@ -95,75 +99,7 @@ class _HomescreenState extends State<Homescreen> {
             ),
           ],
         ),
-        endDrawer: Drawer(
-          backgroundColor: Color.fromARGB(255, 31, 30, 30),
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(left: 30.h, top: 4.h),
-                  child: IconButton(
-                    onPressed: () {
-                      Navigator.pop(context);
-                    },
-                    icon: Icon(
-                      Icons.arrow_forward_ios,
-                      color: const Color.fromARGB(255, 161, 159, 159),
-                    ),
-                  ),
-                ),
-                CircleAvatar(
-                  backgroundColor: Colors.grey,
-                  maxRadius: 40,
-                  backgroundImage: AssetImage('assets/images/logo2.jpg'),
-                ),
-                SizedBox(
-                  height: 2.h,
-                ),
-                DrawerFeatures(
-                  text: "SIGNIN /SIGNUP",
-                  ontap: () {},
-                ),
-                DrawerFeatures(
-                  text: "CUSTOMER SERVICES",
-                  ontap: () {},
-                ),
-                DrawerFeatures(
-                  text: "CLUB QFX",
-                  ontap: () {},
-                ),
-                DrawerFeatures(
-                  text: "ADERTIVES WITH US",
-                  ontap: () {},
-                ),
-                DrawerFeatures(
-                  text: "BECOME QFX FRANCHIEE",
-                  ontap: () {},
-                ),
-                DrawerFeatures(
-                  text: "CAREERS",
-                  ontap: () {},
-                ),
-                DrawerFeatures(
-                  text: "ABOUT US",
-                  ontap: () {},
-                ),
-                DrawerFeatures(
-                  text: "FAQS",
-                  ontap: () {},
-                ),
-                DrawerFeatures(
-                  text: "TERM AND PRIVACY",
-                  ontap: () {},
-                ),
-                DrawerFeatures(
-                  text: "PRIVACY POLICY",
-                  ontap: () {},
-                ),
-              ],
-            ),
-          ),
-        ),
+        endDrawer: DrawerWidgets(),
         body: Container(
           decoration: BoxDecoration(
             image: DecorationImage(
@@ -245,6 +181,7 @@ class _HomescreenState extends State<Homescreen> {
             ],
           ),
         ),
+        bottomNavigationBar: BottomBar(),
       ),
     );
   }
