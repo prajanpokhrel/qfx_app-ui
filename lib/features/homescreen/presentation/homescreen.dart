@@ -31,7 +31,7 @@ class _HomescreenState extends State<Homescreen> {
         key: scaffoldKey, // Assign the key to access scaffold functions
         appBar: AppBar(
           backgroundColor: const Color.fromARGB(255, 63, 61, 61),
-          toolbarHeight: 70, // Increases AppBar height
+          toolbarHeight: 70,
           leadingWidth: 100,
           leading: Padding(
             padding: EdgeInsets.only(left: 2.h),
@@ -155,9 +155,6 @@ class _HomescreenState extends State<Homescreen> {
                           padding: const EdgeInsets.all(4.0),
                           child: Row(mainAxisSize: MainAxisSize.min, children: [
                             Icon(size: 12, Icons.electric_bolt_sharp),
-                            // SizedBox(
-                            //   width: 1,
-                            // ),
                             Text(
                               "QUICK BUY",
                               style: TextStyle(

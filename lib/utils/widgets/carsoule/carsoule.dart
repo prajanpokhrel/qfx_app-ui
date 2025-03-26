@@ -14,11 +14,8 @@ class _CarouselState extends State<Carousel> {
   final CarouselController _controller = CarouselController();
 
   final List<String> items = [
-    "marco.png",
-    "OUT.jpg",
-    "pushpa2.png",
-    "laaj.png",
-    "chava.jpg"
+    "banner1.jpg",
+    "bann2.jpg",
   ];
 
   @override
@@ -36,7 +33,7 @@ class _CarouselState extends State<Carousel> {
             scrollDirection: Axis.horizontal,
             reverse: false,
             viewportFraction: 1.0,
-            height: 20.h,
+            height: 16.h,
             onPageChanged: (index, reason) {
               setState(() {
                 _current = index;
