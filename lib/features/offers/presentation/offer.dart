@@ -75,7 +75,97 @@ class _OffersScreenState extends State<OffersScreen> {
         ),
       ),
       endDrawer: DrawerWidgets(),
-      body: const Column(children: []),
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage("assets/images/black.jpg"),
+            fit: BoxFit.fill,
+          ),
+        ),
+        child: Column(
+          children: [
+            Container(
+              height: 8.h,
+              width: 100.w,
+              decoration: BoxDecoration(
+                color: Colors.black.withOpacity(0.3),
+              ),
+              child: Column(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(top: 1.h, right: 20.h),
+                    child: Container(
+                      height: 5.h,
+                      width: 40.w,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(5),
+                        color: const Color.fromARGB(255, 63, 61, 61),
+                      ),
+                      child: Center(
+                        child: Text(
+                          "CINEMA OFFERS",
+                          style: TextStyle(
+                              color: Colors.white, fontWeight: FontWeight.w500),
+                        ),
+                      ),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            SizedBox(
+              height: 1.h,
+            ),
+            Padding(
+              padding: EdgeInsets.only(right: 1.h),
+              child: Container(
+                height: 15.h,
+                width: 95.w,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  color: Colors.black.withOpacity(0.4),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Flexible(
+                          child: Padding(
+                            padding: EdgeInsets.only(top: 1.h),
+                            child: Divider(
+                              color: Colors.blue,
+                              thickness: 2,
+                              height: 40,
+                              indent: 14,
+                              endIndent: 12,
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(top: 1.h, right: 16.h),
+                          child: Text(
+                            "CINEMA OFFERS",
+                            style: TextStyle(color: Colors.white, fontSize: 20),
+                          ),
+                        )
+                      ],
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(12.0),
+                      child: Text(
+                        "CINEMA OFFERS",
+                        style: TextStyle(color: Colors.white, fontSize: 16),
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
