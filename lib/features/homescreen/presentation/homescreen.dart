@@ -8,7 +8,7 @@ import 'package:qfx_app/features/tabs/now_showing.dart';
 import 'package:qfx_app/utils/widgets/bottombar/bottombar.dart';
 import 'package:qfx_app/utils/widgets/carsoule/carsoule.dart';
 import 'package:qfx_app/utils/widgets/drawer/drawer.dart';
-import 'package:qfx_app/utils/widgets/drawer/drawer_details.dart';
+
 import 'package:qfx_app/utils/widgets/dropdown/dropdown.dart';
 import 'package:qfx_app/utils/widgets/popupcard.dart';
 import 'package:responsive_sizer/responsive_sizer.dart';
@@ -130,38 +130,41 @@ class _HomescreenState extends State<Homescreen> {
                           TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
                     ),
                   ),
-                  Flexible(
-                    flex: 3,
-                    child: GestureDetector(
-                      onTap: () {
-                        showDialog(
-                            context: context,
-                            builder: (context) {
-                              return Dialog(
-                                backgroundColor: Colors.transparent,
-                                elevation: 0,
-                                child: Popupcard(),
-                              );
-                            });
-                      },
-                      child: Container(
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(8),
-                          color: Color.fromARGB(204, 56, 191, 245),
-                        ),
-                        height: 4.h,
-                        width: 80.w,
-                        child: Padding(
-                          padding: const EdgeInsets.all(4.0),
-                          child: Row(mainAxisSize: MainAxisSize.min, children: [
-                            Icon(size: 12, Icons.electric_bolt_sharp),
-                            Text(
-                              "QUICK BUY",
-                              style: TextStyle(
-                                  fontSize: 13, fontWeight: FontWeight.w800),
-                            ),
-                          ]),
-                        ),
+                  GestureDetector(
+                    onTap: () {
+                      showDialog(
+                          context: context,
+                          builder: (context) {
+                            return Dialog(
+                              backgroundColor: Colors.transparent,
+                              elevation: 0,
+                              child: Popupcard(),
+                            );
+                          });
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8),
+                        color: Color.fromARGB(204, 56, 191, 245),
+                      ),
+                      height: 4.5.h,
+                      width: 86.w,
+                      child: Padding(
+                        padding: const EdgeInsets.all(4.0),
+                        child: Row(mainAxisSize: MainAxisSize.min, children: [
+                          Icon(
+                            size: 12,
+                            Icons.electric_bolt_sharp,
+                            color: Colors.white,
+                          ),
+                          Text(
+                            "QUICK BUY",
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 12,
+                                fontWeight: FontWeight.w800),
+                          ),
+                        ]),
                       ),
                     ),
                   ),

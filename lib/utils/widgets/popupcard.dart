@@ -32,7 +32,7 @@ class _PopupcardState extends State<Popupcard> {
             child: Row(
               children: [
                 SizedBox(
-                  width: 5.h,
+                  width: 2.h,
                 ),
                 Container(
                   height: 4.h,
@@ -75,7 +75,7 @@ class _PopupcardState extends State<Popupcard> {
             ),
           ),
           Container(
-            height: 47.h,
+            height: 47.4.h,
             width: 85.w,
             decoration: BoxDecoration(
               color: const Color.fromARGB(255, 49, 49, 49),
@@ -96,7 +96,7 @@ class _PopupcardState extends State<Popupcard> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsets.only(left: 2.h, top: 1.h),
+                          padding: EdgeInsets.only(left: 1.h, top: 1.h),
                           child: Text(
                             'Book your tickets in 4 easy \n steps',
                             style: TextStyle(

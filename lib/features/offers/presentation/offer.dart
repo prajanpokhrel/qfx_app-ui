@@ -30,48 +30,48 @@ class _OffersScreenState extends State<OffersScreen> {
       key: scaffoldKey,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(15.h),
-        child: SafeArea(
-          child: Container(
-            color: const Color.fromARGB(255, 63, 61, 61),
-            child: Column(
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(right: 20.h, top: 1.h),
-                  child: Image.asset(
-                    "assets/images/logo.png",
-                    width: 14.w,
-                    height: 6.h,
-                    fit: BoxFit.cover,
+        child: Container(
+          color: const Color.fromARGB(255, 63, 61, 61),
+          child: Column(
+            children: [
+              Padding(
+                padding: EdgeInsets.only(right: 2.h, top: 4.h),
+                child: Image.asset(
+                  "assets/images/logo.png",
+                  width: 14.w,
+                  height: 6.h,
+                  fit: BoxFit.cover,
+                ),
+              ),
+              Expanded(
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.h),
+                  child: Row(
+                    children: [
+                      IconButton(
+                        onPressed: () => Navigator.pop(context),
+                        icon: const Icon(Icons.arrow_back_ios,
+                            color: Colors.white),
+                      ),
+                      const Spacer(),
+                      const Text(
+                        "OFFERS",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w500),
+                      ),
+                      const Spacer(),
+                      IconButton(
+                        onPressed: () =>
+                            scaffoldKey.currentState?.openEndDrawer(),
+                        icon: const Icon(Icons.menu, color: Colors.white),
+                      ),
+                    ],
                   ),
                 ),
-                Expanded(
-                  child: Padding(
-                    padding:
-                        EdgeInsets.symmetric(horizontal: 4.w, vertical: 1.h),
-                    child: Row(
-                      children: [
-                        IconButton(
-                          onPressed: () => Navigator.pop(context),
-                          icon: const Icon(Icons.arrow_back_ios,
-                              color: Colors.white),
-                        ),
-                        const Spacer(),
-                        const Text(
-                          "OFFERS",
-                          style: TextStyle(color: Colors.white, fontSize: 20),
-                        ),
-                        const Spacer(),
-                        IconButton(
-                          onPressed: () =>
-                              scaffoldKey.currentState?.openEndDrawer(),
-                          icon: const Icon(Icons.menu, color: Colors.white),
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
