@@ -118,7 +118,7 @@ class _HomescreenState extends State<Homescreen> {
                 tabs: [
                   Tab(
                     child: Text(
-                      "NOW ",
+                      "NOW  SHOWING",
                       style:
                           TextStyle(fontSize: 12, fontWeight: FontWeight.bold),
                     ),
